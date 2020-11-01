@@ -53,11 +53,8 @@ public class Nim extends Game {
     }
 
     // is current state valid
-    private boolean checkState(State state) {
+    private void checkState(State state) {
         NimState state_n = (NimState) state;
-
-        //make sure there are not negative numbers in the pile
-        return state_n.coins_pile >= 0;
     }
 
     public double eval(State state) {
@@ -97,12 +94,12 @@ public class Nim extends Game {
                     // number of coins taken by the user
                     int coins_taken = Integer.parseInt(in.readLine());
                     if (coins_taken > 3) {
-                        System.out.println("You must choose between 1 - 3 coins");
+                        System.out.println("You must choose between 1 - 3 coins\n");
                         System.out.print("Enter your *valid* move> ");
                         coins_taken = Integer.parseInt(in.readLine());
                     }
                     if (coins_taken < 1) {
-                        System.out.print("You must choose between 1 - 3 coins");
+                        System.out.print("You must choose between 1 - 3 coins\n");
                         System.out.print("Enter your *valid* move> ");
                         coins_taken = Integer.parseInt(in.readLine());
                     }
